@@ -519,99 +519,181 @@ p {
 
 // info area
 .info {
-	min-height: 456px;
+	min-height: 446px;
 	position: relative;
 	z-index: 2;
-	margin-top: -20px;
+	margin-top: -25px;
 	background: url('../img/back-info.png') no-repeat center top/cover;
+	& .row {
+		@include clearfix;
+		padding: 50px;
+	}
 }
 
 .info__about {
-
+	float: left;
+	width: 305px;
+	color: #fff;
+	margin-top: 70px;
 }
 
 .info__about-top {
-
+	@include clearfix;
 }
 
 .info__about-pic {
-
+	position: relative;
+	width: 125px;
+	height: 130px;
+	float: left;
 }
 
 .info__about-pic_elem {
-
+	@include absolute-center;
+	max-width: 99.9%;
+	max-height: 99.9%;
 }
 
 .info__about-title {
-
+	float: left;
+	@include opensans(birch);
+	font-size: 17px;
+	transform: scale(1, 2);
+	font-weight: 600;
+	margin-top: 55px;
+	margin-left: 10px;
 }
 
 .info__about-text {
-
+	@include opensans(alight);
+	font-size: 15px;
+	margin-left: 15px;
 }
 
 .info__discover {
-
+	float: left;
+	margin-top: 70px;
+	color: #fff;
+	width: 260px;
+	margin-left: 75px;
 }
 
 .info__discover-top {
-
+	@include clearfix;
 }
 
 .info__discover-pic {
-
+	float: left;
+	position: relative;
+	width: 125px;
+	height: 125px;
 }
 
 .info__discover-pic_elem {
-
+	@include absolute-center;
+	max-width: 99.9%;
+	max-height: 99.9%;
 }
 
 .info__discover-title {
-
+	float: left;
+	@include opensans(birch);
+	font-size: 17px;
+	transform: scale(1, 2);
+	font-weight: 600;
+	margin-top: 55px;
+	margin-left: 10px;
 }
 
 .info__discover-list {
-
+	height: 105px;
+	@include clearfix;
 }
 
 .info__discover-list_item {
+	float: left;
+	&:last-child {
+		margin-left: 10px;
+	}
+}
 
+.list_item-left {
+
+}
+
+.list_item-right {
+
+}
+
+.list_item-text {
+	@include opensans(alight);
+	font-size: 15px;
+	margin-left: 15px;
 }
 
 .info__kontakt {
-
+	float: left;
+	margin-top: 70px;
+	color: #fff;
+	margin-left: 100px;
 }
 
 .info__kontakt-top {
-
+	@include clearfix;
 }
 
 .info__kontakt-pic {
-
+	float: left;
+	height: 120px;
+	width: 120px;
+	position: relative;
 }
 
 .info__kontakt-pic_elem {
-
+	@include absolute-center;
+	max-width: 99.9%;
+	max-height: 99.9%;
 }
 
 .info__kontakt-title {
-
+	float: left;
+	@include opensans(birch);
+	font-size: 17px;
+	transform: scale(1, 2);
+	font-weight: 600;
+	margin-top: 58px;
+	margin-left: 10px;
 }
 
 .info__kontakt-list {
-
+	padding-left: 15px;
 }
 
 .info__kontakt-list_item {
-
+	@include clearfix;
 }
 
 .kontakt-list_item-mark {
-
+	float: left;
+	width: 55px;
+	height: 65px;
 }
 
 .kontakt-list_item-text {
+	float: left;
+	@include opensans(alight);
+	font-size: 15px;
+	margin-left: 20px;
+	margin-top: 9px;
+	&_one {
 
+	}
+	&_two {
+		margin-top: 19px;
+	}
+	&_three {
+		margin-top: 19px;
+	}
 }
 
 
@@ -636,22 +718,31 @@ p {
 	box-shadow: -1px -1px 12px 0px rgba(0,0,0,0.75);
 	.row {
 		@include clearfix;
+		padding: 0 82px;
 	}
 }
 
 .footer__logo {
-	width: 198px;
+	width: 255px;
 	height: 58px;
 	float: left;
 	margin-top: 20px;
+	position: relative;
 }
 
 .footer__logo-link {
-
+	float: left;
 }
 
 .footer__logo-pic {
 
+}
+
+.footer__logo-text {
+	color: #919193;
+	position: absolute;
+	bottom: -3px;
+	right: -3px;
 }
 
 .footer__avtor {
@@ -659,6 +750,7 @@ p {
 	height: 44px;
 	float: right;
 	margin-top: 30px;
+	margin-right: 144px;
 }
 
 .footer__avtor-link {

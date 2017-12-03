@@ -381,11 +381,237 @@ p {
 }
 
 .info {
-  min-height: 456px;
+  min-height: 446px;
   position: relative;
   z-index: 2;
-  margin-top: -20px;
+  margin-top: -25px;
   background: url("../img/back-info.png") no-repeat center top/cover;
+}
+
+.info .row {
+  padding: 50px;
+}
+
+.info .row:before,
+.info .row:after {
+  content: "";
+  display: table;
+}
+
+.info .row:after {
+  clear: both;
+}
+
+.info__about {
+  float: left;
+  width: 305px;
+  color: #fff;
+  margin-top: 70px;
+}
+
+.info__about-top:before,
+.info__about-top:after {
+  content: "";
+  display: table;
+}
+
+.info__about-top:after {
+  clear: both;
+}
+
+.info__about-pic {
+  position: relative;
+  width: 125px;
+  height: 130px;
+  float: left;
+}
+
+.info__about-pic_elem {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  max-width: 99.9%;
+  max-height: 99.9%;
+}
+
+.info__about-title {
+  float: left;
+  font-family: 'BirchStd';
+  font-size: 17px;
+  -webkit-transform: scale(1, 2);
+  -ms-transform: scale(1, 2);
+  transform: scale(1, 2);
+  font-weight: 600;
+  margin-top: 55px;
+  margin-left: 10px;
+}
+
+.info__about-text {
+  font-family: 'AvenirLTStd-Light';
+  font-size: 15px;
+  margin-left: 15px;
+}
+
+.info__discover {
+  float: left;
+  margin-top: 70px;
+  color: #fff;
+  width: 260px;
+  margin-left: 75px;
+}
+
+.info__discover-top:before,
+.info__discover-top:after {
+  content: "";
+  display: table;
+}
+
+.info__discover-top:after {
+  clear: both;
+}
+
+.info__discover-pic {
+  float: left;
+  position: relative;
+  width: 125px;
+  height: 125px;
+}
+
+.info__discover-pic_elem {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  max-width: 99.9%;
+  max-height: 99.9%;
+}
+
+.info__discover-title {
+  float: left;
+  font-family: 'BirchStd';
+  font-size: 17px;
+  -webkit-transform: scale(1, 2);
+  -ms-transform: scale(1, 2);
+  transform: scale(1, 2);
+  font-weight: 600;
+  margin-top: 55px;
+  margin-left: 10px;
+}
+
+.info__discover-list {
+  height: 105px;
+}
+
+.info__discover-list:before,
+.info__discover-list:after {
+  content: "";
+  display: table;
+}
+
+.info__discover-list:after {
+  clear: both;
+}
+
+.info__discover-list_item {
+  float: left;
+}
+
+.info__discover-list_item:last-child {
+  margin-left: 10px;
+}
+
+.list_item-text {
+  font-family: 'AvenirLTStd-Light';
+  font-size: 15px;
+  margin-left: 15px;
+}
+
+.info__kontakt {
+  float: left;
+  margin-top: 70px;
+  color: #fff;
+  margin-left: 100px;
+}
+
+.info__kontakt-top:before,
+.info__kontakt-top:after {
+  content: "";
+  display: table;
+}
+
+.info__kontakt-top:after {
+  clear: both;
+}
+
+.info__kontakt-pic {
+  float: left;
+  height: 120px;
+  width: 120px;
+  position: relative;
+}
+
+.info__kontakt-pic_elem {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  max-width: 99.9%;
+  max-height: 99.9%;
+}
+
+.info__kontakt-title {
+  float: left;
+  font-family: 'BirchStd';
+  font-size: 17px;
+  -webkit-transform: scale(1, 2);
+  -ms-transform: scale(1, 2);
+  transform: scale(1, 2);
+  font-weight: 600;
+  margin-top: 58px;
+  margin-left: 10px;
+}
+
+.info__kontakt-list {
+  padding-left: 15px;
+}
+
+.info__kontakt-list_item:before,
+.info__kontakt-list_item:after {
+  content: "";
+  display: table;
+}
+
+.info__kontakt-list_item:after {
+  clear: both;
+}
+
+.kontakt-list_item-mark {
+  float: left;
+  width: 55px;
+  height: 65px;
+}
+
+.kontakt-list_item-text {
+  float: left;
+  font-family: 'AvenirLTStd-Light';
+  font-size: 15px;
+  margin-left: 20px;
+  margin-top: 9px;
+}
+
+.kontakt-list_item-text_two {
+  margin-top: 19px;
+}
+
+.kontakt-list_item-text_three {
+  margin-top: 19px;
 }
 
 .empty {
@@ -403,6 +629,10 @@ p {
   box-shadow: -1px -1px 12px 0px rgba(0, 0, 0, 0.75);
 }
 
+.footer .row {
+  padding: 0 82px;
+}
+
 .footer .row:before,
 .footer .row:after {
   content: "";
@@ -414,10 +644,22 @@ p {
 }
 
 .footer__logo {
-  width: 198px;
+  width: 255px;
   height: 58px;
   float: left;
   margin-top: 20px;
+  position: relative;
+}
+
+.footer__logo-link {
+  float: left;
+}
+
+.footer__logo-text {
+  color: #919193;
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
 }
 
 .footer__avtor {
@@ -425,4 +667,5 @@ p {
   height: 44px;
   float: right;
   margin-top: 30px;
+  margin-right: 144px;
 }
