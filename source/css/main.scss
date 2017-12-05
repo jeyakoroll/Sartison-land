@@ -238,12 +238,12 @@ p {
 	height: auto !important;
 	height: 100%;
 	width: 100%;
-	// overflow: hidden;
+	overflow: hidden;
 }
 
 .row {
 	padding: 0 72px;
-	@include laptop {
+	@include desktop {
 		padding: 0;
 	}
 }
@@ -255,30 +255,56 @@ p {
 	-webkit-box-shadow: -1px -1px 12px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: -1px -1px 12px 0px rgba(0,0,0,0.75);
 	box-shadow: -1px -1px 12px 0px rgba(0,0,0,0.75);
+	@include laptop {
+		height: 100px;
+	}
 	.row {
 		@include clearfix;
 	}
 }
 
 .header__logo {
-	width: 270px;
-	height: 80px;
 	float: left;
 	margin-top: 15px;
-	cursor: pointer;
+	cursor: pointer;	
+	@include laptop {
+		margin-top: 6px;
+	}
+	@include tablets {
+		display: block;
+		float: none;
+	}
 }
 
 .header__logo-link {
-
+	position: relative;
+	display: block;
+	width: 270px;
+	height: 80px;
+	@include laptop {
+		width: 140px;
+	}
+	@include tablets {
+		float: none;
+		width: 240px;
+		height: 80px;
+		display: block;
+		margin: 10px auto;
+	}
 }
 
 .header__logo-pic {
-
+	@include absolute-center;
+	max-width: 99.9%;
+	max-height: 99.9%;
 }
 
 .header__nav {
 	width: 605px;
 	float: right;
+	@include tablets {
+		display: none;
+	}
 }
 
 .header__nav-list {
@@ -294,6 +320,9 @@ p {
 	font-weight: 600;
 	text-transform: uppercase;
 	@include opensans(birch);
+	@include laptop {
+		float: right;
+	}
 }
 
 .header__nav-link {
@@ -316,6 +345,9 @@ p {
 		color: #ebebeb;
 		text-decoration: none;
 	}
+	@include laptop {
+		padding: 37px 10px 0;
+	}
 }
 
 // about area
@@ -324,6 +356,14 @@ p {
 	background: url('../img/back-about.png') no-repeat center top/cover;
 	position: relative;
 	z-index: 5;
+	@include tablets {
+		min-height: 0;
+		height: auto;
+		padding-bottom: 100px;
+	}
+	@include phones {
+		padding-bottom: 90px;
+	}
 	.row {
 		@include clearfix;
 	}
@@ -336,6 +376,20 @@ p {
 	float: left;
 	top: 60px;
 	margin-left: 6%;
+	@include desktop {
+		height: 278px;
+    width: 236px;
+	}
+	@include laptop {
+		width: 175px;
+		margin-left: 3%;
+	}
+	@include tablets {
+		float: none;
+		display: block;
+		margin: 0 auto;
+		top: 10px;
+	}
 }
 
 .about__pic-item {
@@ -350,6 +404,15 @@ p {
 	width: 640px;
 	margin-left: 30px;
 	color: #000;
+	@include laptop {
+		width: 500px;
+	}
+	@include tablets {
+		float: none;
+		width: 85%;
+		display: block;
+		margin: 0 auto;
+	}
 }
 
 .about__content-title {
@@ -359,12 +422,21 @@ p {
 	font-weight: 600;
 	word-spacing: -4px;
 	margin-bottom: 38px;
+	@include tablets {
+		text-align: center;
+	}
+	@include phones {
+		font-size: 20px;
+	}
 }
 
 .about__content-text {
 	@include opensans(aroman);
 	font-size: 15px;
 	line-height: 20px;
+	@include tablets {
+		padding-left: 15px;
+	}
 }
 
 // team area
@@ -375,6 +447,15 @@ p {
 	padding-top: 45px;
 	z-index: 4;
 	position: relative;
+	@include laptop {
+		min-height: 578px;
+	}
+	@include tablets {
+		margin-top: -35px;
+	}
+	@include main(520px) {
+		margin-top: -38px;
+	}
 }
 
 .team__title {
@@ -385,6 +466,9 @@ p {
 	word-spacing: -4px;
 	color: #fff;
 	text-align: center;
+	@include phones {
+		font-size: 25px;
+	}
 }
 
 .team__slider-wrap {
@@ -392,33 +476,109 @@ p {
 }
 
 .team__slider-arr {
-
-}
-
-.team__slider-arr_prev {
-
-}
-
-.team__slider-arr_next {
-
+	height: 55px;
+	width: 100%;
+	position: absolute;
+	top: 29%;
+	@include laptop {
+		top: 21%;
+	}
+	@include main(840px) {
+		width: 90%;
+		left: 5.1%;
+	}
+	@include tablets {
+		width: 85%;
+    left: 7%;
+	}
+	@include main(375px) {
+		width: 90%;
+		left: 5.1%;
+		z-index: 3;
+	}
+	@include main(345px) {
+		width: 97%;
+    left: 1.5%;
+	}
+	&_prev {
+		height: 55px;
+		width: 55px;
+		background: url('../img/team-prev.png') no-repeat center center/cover;
+		position: absolute;
+		left: -2%;
+		@include laptop {
+			left: 0;
+		}
+	}
+	&_next {
+		height: 55px;
+		width: 55px;
+		background: url('../img/team-next.png') no-repeat center center/cover;
+		position: absolute;
+		right: -2%;
+		@include laptop {
+			right: 0;
+		}
+	}
+	& .owl-prev {
+		width: 55px;
+		height: 55px;
+		position: absolute;
+		left: -2%;
+		opacity: 0;
+		cursor: pointer;
+		z-index: 1;
+		@include laptop {
+			left: 0;
+		}
+	}
+	& .owl-next {
+		width: 55px;
+		height: 55px;
+		position: absolute;
+		right: -2%;
+		opacity: 0;
+		cursor: pointer;
+		z-index: 1;
+		@include laptop {
+			right: 0;
+		}
+	}
 }
 
 .team__slider {
-	width: 903px;
+	width: 900px;
+	display: block;
 	margin: 0 auto;
+	overflow: hidden;
 	@include clearfix;
+	@include laptop {
+		width: 550px;
+	}
+	@include tablets {
+		width: 265px;
+	}
 }
 
 .team__slider-item {
 	float: left;
 	margin: 0 8px;
 	color: #fff;
+	width: 285px;
+	@include laptop {
+		width: 250px;
+	}
 }
 
 .team__slider-pic {
 	width: 285px;
 	height: 285px;
 	position: relative;
+	@include laptop {
+		width: 200px;
+		height: 200px;
+		margin: 0 auto;
+	}
 }
 
 .team__slider-pic_elem {
@@ -433,6 +593,8 @@ p {
 	transform: scale(1, 2);
 	font-weight: 500;
 	text-align: center;
+	width: 250px;
+	margin: 15px auto;
 }
 
 .team__slider-text {
@@ -440,6 +602,9 @@ p {
 	@include opensans(aroman);
 	width: 236px;
 	margin: 0 auto;
+	@include laptop {
+		width: 200px;
+	}
 }
 
 // transport area
@@ -450,6 +615,9 @@ p {
 	padding-top: 45px;
 	position: relative;
 	z-index: 3;
+	@include laptop {
+		min-height: 578px;
+	}
 }
 
 .transport__title {
@@ -460,6 +628,9 @@ p {
 	word-spacing: -4px;
 	color: #fff;
 	text-align: center;
+	@include phones {
+		font-size: 25px;
+	}
 }
 
 .transport__slider-wrap {
@@ -467,33 +638,110 @@ p {
 }
 
 .transport__slider-arr {
-
-}
-
-.transport__slider-arr_prev {
-
-}
-
-.transport__slider-arr_next {
-
+	height: 55px;
+	width: 100%;
+	position: absolute;
+	top: 29%;
+	@include laptop {
+		top: 21%;
+	}
+	@include main(840px) {
+		width: 90%;
+		left: 5.1%;
+	}
+	@include tablets {
+		width: 85%;
+    left: 7%;
+	}
+	@include main(375px) {
+		width: 90%;
+		left: 5.1%;
+		z-index: 3;
+	}
+	@include main(345px) {
+		width: 97%;
+    left: 1.5%;
+	}
+	&_prev {
+		height: 55px;
+		width: 55px;
+		background: url('../img/trans-prev.png') no-repeat center center/cover;
+		position: absolute;
+		left: -2%;
+		@include laptop {
+			left: 0;
+		}
+	}
+	&_next {
+		height: 55px;
+		width: 55px;
+		background: url('../img/trans-next.png') no-repeat center center/cover;
+		position: absolute;
+		right: -2%;
+		@include laptop {
+			right: 0;
+		}
+	}
+	& .owl-prev {
+		width: 55px;
+		height: 55px;
+		position: absolute;
+		left: -2%;
+		opacity: 0;
+		cursor: pointer;
+		z-index: 1;
+		@include laptop {
+			left: 0;
+		}
+	}
+	& .owl-next {
+		width: 55px;
+		height: 55px;
+		position: absolute;
+		right: -2%;
+		opacity: 0;
+		cursor: pointer;
+		z-index: 1;
+		@include laptop {
+			right: 0;
+		}
+	}
 }
 
 .transport__slider {
-	width: 903px;
+	width: 900px;
+	display: block;
+	position: relative;
 	margin: 0 auto;
+	overflow: hidden;
 	@include clearfix;
+	@include laptop {
+		width: 550px;
+	}
+	@include tablets {
+		width: 265px;
+	}
 }
 
 .transport__slider-item {
 	float: left;
 	margin: 0 8px;
 	color: #fff;
+	width: 285px;
+	@include laptop {
+		width: 250px;
+	}
 }
 
 .transport__slider-pic {
 	width: 285px;
 	height: 285px;
 	position: relative;
+	@include laptop {
+		width: 200px;
+		height: 200px;
+		margin: 0 auto;
+	}
 }
 
 .transport__slider-pic_elem {
@@ -508,6 +756,8 @@ p {
 	transform: scale(1, 2);
 	font-weight: 500;
 	text-align: center;
+	width: 250px;
+	margin: 15px auto;
 }
 
 .transport__slider-text {
@@ -515,6 +765,9 @@ p {
 	@include opensans(aroman);
 	width: 236px;
 	margin: 0 auto;
+	@include laptop {
+		width: 200px;
+	}
 }
 
 // info area
@@ -527,6 +780,12 @@ p {
 	& .row {
 		@include clearfix;
 		padding: 50px;
+		@include desktop {
+			padding: 0;
+		}
+		@include laptop {
+			padding-bottom: 50px;
+		}
 	}
 }
 
@@ -535,6 +794,24 @@ p {
 	width: 305px;
 	color: #fff;
 	margin-top: 70px;
+	@include laptop {
+		display: block;
+		float: none;
+		width: 85%;
+		margin: 70px auto 0;
+	}
+	@include tablets {
+		width: 60%;
+		padding-left: 40px;
+	}
+	@include phones {
+		width: 80%;
+		padding-left: 25px;
+	}
+	@include main(400px) {
+		width: 90%;
+		padding: 0 10px;
+	}
 }
 
 .info__about-top {
@@ -576,6 +853,14 @@ p {
 	color: #fff;
 	width: 260px;
 	margin-left: 75px;
+	@include desktop {
+		margin-left: 50px;
+	}
+	@include tablets {
+		float: none;
+		display: block;
+		margin: 40px auto 0;
+	}
 }
 
 .info__discover-top {
@@ -636,6 +921,19 @@ p {
 	margin-top: 70px;
 	color: #fff;
 	margin-left: 100px;
+	@include desktop {
+		margin-left: 70px;
+	}
+	@include laptop {
+		float: right;
+		margin-right: 50px;
+	}
+	@include tablets {
+		width: 270px;
+		float: none;
+		display: block;
+		margin: 40px auto 0;
+	}
 }
 
 .info__kontakt-top {
@@ -697,11 +995,6 @@ p {
 }
 
 
-
-
-
- 
-
 .empty {
 	height: 108px;
 }
@@ -719,6 +1012,9 @@ p {
 	.row {
 		@include clearfix;
 		padding: 0 82px;
+		@include desktop {
+			padding: 0 20px;
+		}
 	}
 }
 
@@ -728,6 +1024,11 @@ p {
 	float: left;
 	margin-top: 20px;
 	position: relative;
+	@include phones {
+		float: none;
+		display: block;
+		margin: 20px auto;
+	}
 }
 
 .footer__logo-link {
@@ -751,6 +1052,20 @@ p {
 	float: right;
 	margin-top: 30px;
 	margin-right: 144px;
+	@include desktop {
+		margin-right: 80px;
+	}
+	@include laptop {
+		margin-right: 60px;
+	}
+	@include tablets {
+		margin-right: 0;
+	}
+	@include phones {
+		float: none;
+		display: block;
+		margin: 30px auto;
+	}
 }
 
 .footer__avtor-link {
