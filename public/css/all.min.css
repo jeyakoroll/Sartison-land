@@ -191,6 +191,12 @@ p {
   clear: both;
 }
 
+@media screen and (max-width: 992px) {
+  .header__nav-list {
+    padding-left: 82px;
+  }
+}
+
 .header__nav-item {
   position: relative;
   float: left;
@@ -202,7 +208,7 @@ p {
 
 @media screen and (max-width: 992px) {
   .header__nav-item {
-    float: right;
+    float: left;
   }
 }
 

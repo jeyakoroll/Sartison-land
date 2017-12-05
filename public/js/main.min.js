@@ -60,5 +60,26 @@ $(document).ready(function() {
     }
   });
 
+	// scroll function call
+  $('.header__nav-link').on('click', function(e) {
+    e.preventDefault();
+
+    showSection($(this).attr('href'), true); 
+  });
+
+  showSection(window.location.hash, false);
+
+  function showSection(section, isAnimate) {
+  var 
+      direction = section.replace(/#/, ''),
+      reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+      reqSectionPos = reqSection.offset().top + 30;
+
+      if (isAnimate) {
+        $('body, html').animate({scrollTop: reqSectionPos}, 400);
+      } else {
+        $('body, html').scrollTop(reqSectionPos);
+      }
+	}
 
 });

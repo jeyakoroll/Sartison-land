@@ -311,6 +311,9 @@ p {
 	width: auto;
 	position: relative;
 	@include clearfix;
+	@include laptop {
+		padding-left: 82px;
+	}
 }
 
 .header__nav-item {
@@ -321,7 +324,7 @@ p {
 	text-transform: uppercase;
 	@include opensans(birch);
 	@include laptop {
-		float: right;
+		float: left;
 	}
 }
 
