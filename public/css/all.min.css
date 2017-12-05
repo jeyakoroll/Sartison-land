@@ -92,6 +92,8 @@ p {
 .header {
   background-color: #35363b;
   height: 120px;
+  position: relative;
+  z-index: 10;
   -webkit-box-shadow: -1px -1px 12px 0px rgba(0, 0, 0, 0.75);
   box-shadow: -1px -1px 12px 0px rgba(0, 0, 0, 0.75);
 }
@@ -202,23 +204,18 @@ p {
   float: left;
   font-size: 14px;
   font-weight: 600;
+  top: 31%;
   text-transform: uppercase;
   font-family: 'BirchStd';
-}
-
-@media screen and (max-width: 992px) {
-  .header__nav-item {
-    float: left;
-  }
 }
 
 .header__nav-link {
   height: 96px;
   display: inline-block;
+  position: relative;
   color: #ebebeb;
   width: 100%;
   padding: 0 20px;
-  top: -10px;
   padding-top: 42px;
   text-align: center;
   -webkit-transform: scale(1, 1.5);
@@ -228,12 +225,12 @@ p {
 
 .header__nav-link:hover {
   color: #ebebeb;
-  background-color: #aa3231;
   text-decoration: none;
+  background: url("../img/back-hover.png") no-repeat center bottom/cover;
 }
 
 .header__nav-link:focus {
-  background-color: #e0762f;
+  background: url("../img/back-focus.png") no-repeat center bottom/cover;
   color: #ebebeb;
   text-decoration: none;
 }
@@ -242,6 +239,26 @@ p {
   .header__nav-link {
     padding: 37px 10px 0;
   }
+}
+
+.header__nav-link_one {
+  top: 21px;
+  padding-top: 31.5px;
+}
+
+.header__nav-link_two {
+  top: 19px;
+  padding-top: 33px;
+}
+
+.header__nav-link_three {
+  top: 25px;
+  padding-top: 29px;
+}
+
+.header__nav-link_four {
+  top: 23px;
+  padding-top: 29.9px;
 }
 
 .about {
@@ -263,6 +280,10 @@ p {
   .about {
     padding-bottom: 90px;
   }
+}
+
+.about .row {
+  position: relative;
 }
 
 .about .row:before,
@@ -318,6 +339,38 @@ p {
   max-height: 99.9%;
 }
 
+.about__separator {
+  position: absolute;
+  top: 40%;
+  right: 10.5%;
+  width: 680px;
+  height: 59px;
+}
+
+@media screen and (max-width: 1200px) {
+  .about__separator {
+    top: 38.5%;
+    right: 2%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .about__separator {
+    display: none;
+  }
+}
+
+.about__separator-pic {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  max-width: 99.9%;
+  max-height: 99.9%;
+}
+
 .about__content {
   margin-top: 70px;
   float: left;
@@ -350,6 +403,12 @@ p {
   font-weight: 600;
   word-spacing: -4px;
   margin-bottom: 38px;
+}
+
+@media screen and (max-width: 1200px) {
+  .about__content-title {
+    margin-top: -5px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1159,6 +1218,7 @@ p {
 
 .footer {
   position: relative;
+  z-index: 10;
   margin-top: -108px;
   min-height: 108px;
   background-color: #222326;

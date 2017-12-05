@@ -252,6 +252,8 @@ p {
 .header {
 	background-color: #35363b;
 	height: 120px;
+	position: relative;
+	z-index: 10;
 	-webkit-box-shadow: -1px -1px 12px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: -1px -1px 12px 0px rgba(0,0,0,0.75);
 	box-shadow: -1px -1px 12px 0px rgba(0,0,0,0.75);
@@ -321,35 +323,51 @@ p {
 	float: left;
 	font-size: 14px;
 	font-weight: 600;
+	top: 31%;
 	text-transform: uppercase;
 	@include opensans(birch);
-	@include laptop {
-		float: left;
-	}
 }
 
 .header__nav-link {
 	height: 96px;
 	display: inline-block;
+	position: relative;
 	color: #ebebeb;
 	width: 100%;
 	padding: 0 20px;
-	top: -10px;
 	padding-top: 42px;
   text-align: center;
   transform: scale(1, 1.5);
+  // transition: background 0.15s;
 	&:hover {
 		color: #ebebeb;
-		background-color: #aa3231;
+
 		text-decoration: none;
+		background: url('../img/back-hover.png') no-repeat center bottom/cover;
 	}
 	&:focus {
-		background-color: #e0762f;
+		background: url('../img/back-focus.png') no-repeat center bottom/cover;
 		color: #ebebeb;
 		text-decoration: none;
 	}
 	@include laptop {
 		padding: 37px 10px 0;
+	}
+	&_one {
+		top: 21px;
+		padding-top: 31.5px;
+	}
+	&_two {
+		top: 19px;
+		padding-top: 33px;
+	}
+	&_three {
+		top: 25px;
+		padding-top: 29px;
+	}
+	&_four {
+		top: 23px;
+		padding-top: 29.9px;
 	}
 }
 
@@ -369,6 +387,7 @@ p {
 	}
 	.row {
 		@include clearfix;
+		position: relative;
 	}
 }
 
@@ -401,6 +420,27 @@ p {
 	max-height: 99.9%;
 }
 
+.about__separator {
+	position: absolute;
+	top: 40%;
+	right: 10.5%;
+	width: 680px;
+	height: 59px;
+	@include desktop {
+		top: 38.5%;
+		right: 2%;
+	}
+	@include laptop {
+		display: none;
+	}
+}
+
+.about__separator-pic {
+	@include absolute-center;
+	max-width: 99.9%;
+	max-height: 99.9%;
+}
+
 .about__content {
 	margin-top: 70px;
 	float: left;
@@ -425,6 +465,9 @@ p {
 	font-weight: 600;
 	word-spacing: -4px;
 	margin-bottom: 38px;
+	@include desktop {
+		margin-top: -5px;
+	}
 	@include tablets {
 		text-align: center;
 	}
@@ -1004,6 +1047,7 @@ p {
 // section footer
 .footer {
 	position: relative;
+	z-index: 10;
 	margin-top: -108px;
 	min-height: 108px;
 	background-color: #222326;
