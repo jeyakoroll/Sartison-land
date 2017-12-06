@@ -231,7 +231,7 @@ p {
 	margin: 0;
 }
 
-// base style flex
+// base style
 .main {
 	position: relative;
 	min-height: 100%;
@@ -338,43 +338,139 @@ p {
 	padding-top: 42px;
   text-align: center;
   transform: scale(1, 1.5);
-  // transition: background 0.15s;
+  transition: all 0.15s;
 	&:hover {
 		color: #ebebeb;
-
 		text-decoration: none;
 		background: url('../img/back-hover.png') no-repeat center bottom/cover;
+		& .nav-link_star {
+			&-one {
+				opacity: 1;
+			}
+			&-two {
+				opacity: 1;
+			}
+			&-three {
+				opacity: 1;
+			}
+			&-four {
+				opacity: 1;
+			}
+		}
 	}
 	&:focus {
 		background: url('../img/back-focus.png') no-repeat center bottom/cover;
 		color: #ebebeb;
 		text-decoration: none;
+		& .nav-link_star {
+			&-one {
+				opacity: 1;
+			}
+			&-two {
+				opacity: 1;
+			}
+			&-three {
+				opacity: 1;
+			}
+			&-four {
+				opacity: 1;
+			}
+		}
 	}
 	@include laptop {
 		padding: 37px 10px 0;
 	}
 	&_one {
-		top: 21px;
+		top: 21.9px;
 		padding-top: 31.5px;
+		@include laptop {
+			top: -1px;
+			padding-top: 38.5px;
+		}
 	}
 	&_two {
 		top: 19px;
 		padding-top: 33px;
+		@include laptop {
+			top: -3px;
+			padding-top: 40px;
+		}
 	}
 	&_three {
 		top: 25px;
-		padding-top: 29px;
+		padding-top: 29.2px;
+		margin-top: -1px;
+		@include laptop {
+			top: 3px;
+			padding-top: 36.2px;
+		}
 	}
 	&_four {
-		top: 23px;
-		padding-top: 29.9px;
+		top: 23.5px;
+		padding-top: 30px;
+		@include laptop {
+			top: 0.5px;
+			padding-top: 37.1px;
+		}
+	}
+}
+
+.nav-link_star {
+	width: 9px;
+	height: 9px;
+	background: url('../img/star.png') no-repeat center center/cover;
+	position: absolute;
+	opacity: 0;
+	transform: scale(1,0.7);
+	@include laptop {
+		display: none;
+	}
+	&-one {
+		&:first-child {
+			left: 5px;
+			top: 39%;
+		}
+		&:last-child {
+			right: 5px;
+			top: 39%;
+		}
+	}
+	&-two {
+		&:first-child {
+			left: 5px;
+			top: 41%;
+		}
+		&:last-child {
+			right: 5px;
+			top: 41%;
+		}
+	}
+	&-three {
+		&:first-child {
+			left: 5px;
+			top: 37.5%;
+		}
+		&:last-child {
+			right: 5px;
+			top: 37.5%;
+		}
+	}
+	&-four {
+		&:first-child {
+			left: 5px;
+			top: 38%;
+		}
+		&:last-child {
+			right: 5px;
+			top: 38%;
+		}
 	}
 }
 
 // about area
 .about {
 	min-height: 446px;
-	background: url('../img/back-about.png') no-repeat center top/cover;
+	background: url('../img/back-about.png') no-repeat center bottom/cover;
 	position: relative;
 	z-index: 5;
 	@include tablets {
@@ -487,10 +583,10 @@ p {
 
 // team area
 .team {
-	margin-top: -25px;
+	margin-top: -30px;
 	min-height: 678px;
-	background: url('../img/back-team.png') no-repeat center top/cover;
-	padding-top: 45px;
+	background: url('../img/back-team.png') no-repeat center bottom/cover;
+	padding-top: 50px;
 	z-index: 4;
 	position: relative;
 	@include laptop {
@@ -655,10 +751,10 @@ p {
 
 // transport area
 .transport {
-	margin-top: -25px;
+	margin-top: -30px;
 	min-height: 678px;
-	background: url('../img/back-transport.png') no-repeat center top/cover;
-	padding-top: 45px;
+	background: url('../img/back-transport.png') no-repeat center bottom/cover;
+	padding-top: 52px;
 	position: relative;
 	z-index: 3;
 	@include laptop {
@@ -821,7 +917,7 @@ p {
 	min-height: 446px;
 	position: relative;
 	z-index: 2;
-	margin-top: -25px;
+	margin-top: -30px;
 	background: url('../img/back-info.png') no-repeat center top/cover;
 	& .row {
 		@include clearfix;
